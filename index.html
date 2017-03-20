@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CapstoneGardenCalculator</title>
+  <link rel="stylesheet" type="text/css" href="lib/node_modules/materialize-css/dist/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/css.css">
+</head>
+<body ng-app="GardenCalc">
+
+<nav>
+    <div class="nav-wrapper card-panel teal lighten-2 " ng-controller="NavCtrl">
+    <a href="#!" class="brand-logo center">Plant Calculator</a>
+    <ul class="left">
+      <li ng-show="!isLoggedIn"><a href="#!/login">Login</a></li>
+      <li ng-show="isLoggedIn"><a href="#!/logout">Logout</a></li>
+      <li ng-show="isActive('/yardView')" class="active"><a ng-href="gardenView">GardenView</a></li>
+    </ul>
+    </div>
+</nav>
+
+<div class="container" ng-view></div>
+
+<!-- jquery -->
+<script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+<!-- materialize -->
+<script type="text/javascript" src="lib/node_modules/materialize/index.js"></script>
+<!-- materialize javascrpt -->
+<script type="text/javascript" src="lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<!-- firebase -->
+<script type="text/javascript" src="/lib/node_modules/firebase/firebase.js"></script>
+<!-- angular -->
+<script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
+<!-- angular route -->
+<script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
+
+<script src="lib/node_modules/chart.js/dist/Chart.min.js"></script> 
+<script src="lib/node_modules/angular-chart.js/dist/angular-chart.min.js"></script> 
+<!-- app.js -->
+<script type="text/javascript" src="app/app.js"></script>
+<!-- values -->
+<script type="text/javascript" src="app/values/keys.js"></script>
+<!-- factories -->
+<script type="text/javascript" src="app/factories/rainFactory.js"></script>
+<script type="text/javascript" src="app/factories/fireFactory.js"></script>
+<script type="text/javascript" src="app/factories/weatherFactory.js"></script>
+<script type="text/javascript" src="app/factories/authFactory.js"></script>
+<script type="text/javascript" src="app/factories/plantFactory.js"></script>
+<!-- controllers -->
+<script type="text/javascript" src="app/controllers/loginCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/newGardenCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/gardenViewCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/NewPlantCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/GardenHoseCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/navCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/yardViewCtrl.js"></script>
+<script type="text/javascript" src="app/controllers/plantViewCtrl.js"></script>
+
+</body>
+</html>

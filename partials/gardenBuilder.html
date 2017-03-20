@@ -1,0 +1,60 @@
+ <!--this is our user's newgardenform, they create a gardenobject and send it up to firebase  -->
+<h4>What's going on in your Garden?</h4>
+
+
+ <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" ng-model="newGardenObject.gardenName"></textarea>
+          <label for="textarea1">Garden Name</label>
+        
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" ng-model="newGardenObject.gardenZip"></textarea>
+          <label for="textarea1">Garden Zipcode</label>
+        
+        </div>
+      </div>
+    </form>
+  </div>
+  
+<p class="flow-text"> How much Sun does your Garden Get? </p>
+<ul><li>
+
+      <input type="checkbox" class="filled-in" id="full-sun" checked="checked" ng-model="newGardenObject.sunValue" />
+      <label for="full-sun">Full-Sun</label>
+    
+    </li>
+      
+    <li>
+   
+      <input type="checkbox" class="filled-in" id="partsun" checked="checked" ng-model="newGardenObject.partShadeValue" />
+      <label for="partsun">Part-Shade</label>
+   
+    </li>
+    
+    <li>
+    
+
+      <input type="checkbox" class="filled-in" id="fullshade" checked="checked" ng-model="newGardenObject.fullShadeValue"/>
+      <label for="fullshade">Full-Shade</label>
+   
+    </li>
+     
+    </ul>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <a class="waves-effect waves-light btn" ng-click="addYourGarden()"><i class="material-icons left">cloud</i>Plant your Garden</a>
+

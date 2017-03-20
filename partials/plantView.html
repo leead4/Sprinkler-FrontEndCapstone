@@ -1,0 +1,59 @@
+<h3 class="text-flow">Look at your Plant!!!</h3>
+
+
+<p>{{currentPlant.plantName}}</p>
+
+<button class="btn" ng-click="goBack()">Back to Garden</button>
+<button data-target="waterCheck" class="btn">Modal</button>
+
+
+<div id="waterCheck" class="modal">
+    <div class="modal-content">
+      <h4>Water your {{currentPlant.plantName}}!!!!</h4>
+      <p>{{currentPlant.waterTimeline}}</p>
+      <p></p>
+    </div>
+    <div>
+     <ul>
+     <li>this is where user see's the weatherdata</li>
+     <li>forecast</li>
+     <li>high temp</li>
+     <li>low temp</li>
+     <li>precipitation</li>
+     <li>humidity</li>
+     </ul>
+
+      <ul>
+      <li>this is where user updates their water</li>
+      <li><div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" ng-model="userInput"></textarea>
+          <label for="textarea1">How many inches are you adding?</label>
+        </div>
+      </div>
+    </form>
+  </div></li>
+      </ul>
+    </div>
+    <div>
+
+    	<a class="waves-effect waves-light btn" ng-click="checkWater();callRainData()">update</a>
+
+    </div>
+
+    <!-- <div id="" -->
+
+
+
+
+    <div class="modal-footer">
+      <a ng-click="updateThisPlant()" class="modal-action modal-close waves-effect waves-green btn-flat">back to plant</a>
+    </div>
+  </div>
+
+
+
+
+
