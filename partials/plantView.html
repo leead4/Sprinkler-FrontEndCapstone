@@ -1,58 +1,82 @@
-<h3 class="text-flow">Look at your Plant!!!</h3>
+<div class="container">
+<h3 class="text-flow">Look at your {{currentPlant.plantName}}!!!</h3>
 
+<div class="row">
 
-<p>{{currentPlant.plantName}}</p>
+<div class="col s6">
+waterbucket
+<div>interval is {{currentPlant.waterInterval}}</div>
+<div>total rain is {{rainNumber}}</div>
+<div>It's been {{itsBeen}} days since you last updated</div>
+<div>You want to water this plant {{currentPlant.waterType}} inches per {{currentPlant.waterInterval}} days </div>
+<div> you watered your {{currentPlant.plantName}} {{currentPlant.waterObjectUser}} inches {{itsBeen}} days ago
+</div>
+</div>
 
-<button class="btn" ng-click="goBack()">Back to Garden</button>
-<button data-target="waterCheck" class="btn">Modal</button>
+<div class="col s6">weather info 
+  
+     <div>this is where user see's the weatherdata</div>
+     <div><img src="{{icon}}"" alt="weather icon">
+</div>
+     <div>forecast{{forText}}</div>
+     <div>high temp{{tempHigh}}</div>
+     <div>low temp{{tempLow}}</div>
+     <div>precipitation{{precip}}</div>
+     <div></div>
 
+</div>
+</div>
 
-<div id="waterCheck" class="modal">
+<div class="row">
+  <div class="col s12"> 
+  our buttons go here
+  <ul>
+  <li>
+ 
+ 
+  <button class="btn" ng-click="goBack()">Back to Garden</button>
+
+</li>
+<li>
+
+ button update
+ <button data-target="waterCheck" class="btn">Modal</button>
+ <div id="waterCheck" class="modal">
     <div class="modal-content">
-      <h4>Water your {{currentPlant.plantName}}!!!!</h4>
-      <p>{{currentPlant.waterTimeline}}</p>
-      <p></p>
-    </div>
-    <div>
-     <ul>
-     <li>this is where user see's the weatherdata</li>
-     <li>forecast</li>
-     <li>high temp</li>
-     <li>low temp</li>
-     <li>precipitation</li>
-     <li>humidity</li>
-     </ul>
-
-      <ul>
-      <li>this is where user updates their water</li>
-      <li><div class="row">
+   
+      <h3>this is where user updates their water</h3>
+     
+    <div class="row">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
           <textarea id="textarea1" class="materialize-textarea" ng-model="userInput"></textarea>
           <label for="textarea1">How many inches are you adding?</label>
         </div>
-      </div>
+        </div>
+     
     </form>
-  </div></li>
-      </ul>
     </div>
+
+    
     <div>
 
-    	<a class="waves-effect waves-light btn" ng-click="checkWater();callRainData()">update</a>
+      <!-- <a class="waves-effect waves-light btn" ng-click="checkWater();callRainData()">update</a> -->
 
     </div>
-
-    <!-- <div id="" -->
-
-
-
-
-    <div class="modal-footer">
-      <a ng-click="updateThisPlant()" class="modal-action modal-close waves-effect waves-green btn-flat">back to plant</a>
+  <div class="modal-footer">
+      <a ng-click="updateThisPlant()" class="modal-action modal-close waves-effect waves-green btn-flat">Update your water!</a>
     </div>
   </div>
+ 
+</div>
+</li>
+</ul>
+</div>
+</div>
 
+
+</div>
 
 
 

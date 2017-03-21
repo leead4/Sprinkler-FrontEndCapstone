@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("UserCtrl", function($scope, $window, AuthFactory, $location, PlantStorage){
+app.controller("UserCtrl", function($scope, $window, AuthFactory, $location, PlantStorage, PlantGetter, WeatherStorage){
 	// console.log("userctrl wants to run");
 	$scope.account = {
 		email: "",
@@ -47,14 +47,18 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location, Pla
 		.then((gardensObject)=>{
 		 console.log("gardensobject", gardensObject);
 			if (gardensObject.length === 0){
- 				 console.log("THERE IS NOTHING IN YOUR LIFE");
+ 				 // console.log("THERE IS NOTHING IN YOUR LIFE");
  				$scope.isLoggedIn = true;
  				$window.location.href = "#!/plantStuff/gardenBuilder";
  			}else {
  				$scope.gardenExists = true;
  				$scope.isLoggedIn = true;
+ 				WeatherStorage.getWeather().then(function(weatherInfo){
+ 					PlantGetter.setCurrentForecast(weatherInfo);
+ 				});
  				// console.log("YOU DID HAVE SOMETHING IN YOUR LIFE");
- 				console.log("gardensObject", gardensObject);
+ 				// console.log("gardensObject", gardensObject);
+
  				$window.location.href = "#!/yardView";
 			}
 		}, (error) =>{
