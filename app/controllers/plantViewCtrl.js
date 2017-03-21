@@ -21,6 +21,18 @@ app.controller("PlantViewCtrl", function($scope, $routeParams, $document, RainSt
  	};
 
  	intial();
+
+ 	////we need to display the weather for our user to decide////
+
+		let weatherData = PlantGetter.getCurrentForecast();
+		console.log("weatherdata", $scope.weatherData);
+		$scope.tempHigh = weatherData.data.forecast.simpleforecast.forecastday[0].high.fahrenheit;
+		$scope.tempLow = weatherData.data.forecast.simpleforecast.forecastday[0].low.fahrenheit;
+		$scope.forText = weatherData.data.forecast.txt_forecast.forecastday[0].fcttext;
+		$scope.precip = weatherData.data.forecast.simpleforecast.forecastday[0].qpf_allday.in;
+		$scope.icon = weatherData.data.forecast.simpleforecast.forecastday[0].icon_url;
+
+		
     
     //we will probably write these into a factory
     //this is to get the current date for the update
@@ -45,7 +57,7 @@ app.controller("PlantViewCtrl", function($scope, $routeParams, $document, RainSt
 	};
 
 
-	$scope.checkWater = ()=>{
+	let checkWater = ()=>{
 		//this checks our user's interval and compares the date they 
 		//last checked their plant info 
 		
@@ -69,7 +81,7 @@ app.controller("PlantViewCtrl", function($scope, $routeParams, $document, RainSt
 	};
 
 
-	$scope.callRainData = () => {
+	let callRainData = () => {
 
 		//we need to get our start date and end date
 		//for our raindata api call
@@ -79,17 +91,20 @@ app.controller("PlantViewCtrl", function($scope, $routeParams, $document, RainSt
 		let rainEarlier = rainNow - ourInterval; 
 		// console.log("rainNow", rainNow);
 		// console.log("rainEarlier", rainEarlier);
+		let lastUpdate = $scope.currentPlant.waterTimeline;
+		let tellUserThis = rainNow - lastUpdate;
+		$scope.itsBeen = tellUserThis;
 
 		RainStorage.getRainData(rainEarlier, rainNow).then(function(rainNumbers){
-		// console.log("rainNumbers", rainNumbers);
+		console.log("rainNumbers", rainNumbers);
 		let rainArray = Object.values(rainNumbers);
 		let arraySum = 0;
 		for (var i = 0; i < rainArray.length; i++){
 			arraySum += rainArray[i];
 		}
-		// console.log("arraySum", arraySum);
+		console.log("arraySum", arraySum);
 		$scope.rainNumber = arraySum;
-		// console.log("rainNumber", $scope.rainNumber);
+		console.log("rainNumber", $scope.rainNumber);
 		return $scope.rainNumber;
 		
 		});
@@ -98,24 +113,14 @@ app.controller("PlantViewCtrl", function($scope, $routeParams, $document, RainSt
 
 	};
 
+	checkWater();
+	callRainData();
+
+	
 	$scope.goBack = () =>{
 		$window.location.href = "#!/plantStuff/gardenView";
 	};
 
-	$scope.getTheForecast = () => {
-		WeatherStorage.getWeather().then(function(forecast){
-			console.log("forecast", forecast);
-			console.log("forecastday 1", forecast.data.forecast.simpleforecast.forecastday[1].high.value);
-			console.log("forecast.data.forecast.simpleforecast...dayobject", forecast.data.forecast.simpleforecast.forecastday);
-			console.log("forecast.data.forecast.simpleforecast..high", forecast.data.forecast.simpleforecast.forecastday[3].high);
-			console.log("forecast.data.forecast.simpleforecast...conditions", forecast.data.forecast.simpleforecast.forecastday[3].conditions);	
-
-
-
-			$scope.forecastData = forecast;
-		});
-
-	};
 	
 
 

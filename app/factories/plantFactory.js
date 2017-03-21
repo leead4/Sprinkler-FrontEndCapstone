@@ -5,6 +5,16 @@ app.factory("PlantGetter", function(){
 	let currentPlant = {};
 	let currentGarden = {};
 	let currentPlantList = {};
+	let currentForecast = {};
+
+	let getCurrentForecast = () => {
+		return currentForecast;
+	};
+
+	let setCurrentForecast = (something)=> {
+		currentForecast = something;
+
+	};
 
 	let getCurrentPlant = ()=> {
 		return currentPlant;
@@ -33,6 +43,6 @@ app.factory("PlantGetter", function(){
 		return currentPlantList;
 	};
 
-	return {getCurrentPlant, setCurrentPlant, getCurrentGarden, setCurrentGarden, setCurrentPlantList, getCurrentPlantList};
+	return {getCurrentPlant, setCurrentPlant, getCurrentGarden, setCurrentGarden, setCurrentPlantList, getCurrentPlantList, getCurrentForecast, setCurrentForecast};
 
 });
