@@ -21,6 +21,15 @@ app.controller("NewGardenCtrl", function($scope, AuthFactory, $window, $location
 			$window.location.href = "#!/yardView";
 			$scope.$apply();
 		});
+
+
 	};
+
+	$scope.goBacktoYardview = function() {
+		console.log("you want to go back");
+		$window.location.href = "#!/yardView";
+		$scope.apply();
+		
+		};
 });
 
