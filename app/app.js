@@ -97,6 +97,11 @@ app.config(function($routeProvider){
       templateUrl: 'partials/gardenHoseView.html',
       controller: "WaterCtrl",
       resolve: {isAuth}
+    }).
+    when('/plantStuff/updatePlant', {
+      templateUrl: 'partials/updateView.html',
+      controller: "UpdatePlantCtrl",
+      resolve: {isAuth}
     });
      // otherwise('/');
 

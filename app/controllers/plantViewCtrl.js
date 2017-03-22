@@ -175,6 +175,10 @@ app.controller("PlantViewCtrl", function($scope, $routeParams, $document, RainSt
 
 	};
 
+	$scope.goToUpdate =()=> {
+		$window.location.href = "#!/plantStuff/updatePlant";
+
+	};
 
 		
 		

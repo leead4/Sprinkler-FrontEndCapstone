@@ -2,7 +2,7 @@
 ///this shows the user a specific garden and the plants
 //in that garden
 
-app.controller("GardenViewCtrl", function($scope, $routeParams, $window, $location, PlantGetter, PlantStorage, AuthFactory){
+app.controller("GardenViewCtrl", function($scope, $route, $routeParams, $window, $location, PlantGetter, PlantStorage, AuthFactory){
 	// console.log('gardenview wants to run');
 	let user = AuthFactory.getUser();
 	$scope.styleObject = {};
@@ -60,12 +60,13 @@ app.controller("GardenViewCtrl", function($scope, $routeParams, $window, $locati
       let dateDiff = wholeDate - cleanPlant;
       // console.log("dateDiff", dateDiff);
       let interval = items[i].waterInterval;
-      console.log("interval", items[i].waterInterval);
+      // console.log("interval", interval);
       // check if the individual Array element begins with `a` or not
       if (dateDiff > interval) {
+         $scope.styleObject = "fadeClass";
         items[i].styleObject = $scope.styleObject;
         // push it into the Array if it does!
-        $scope.styleObject = "fadeClass";
+        // $scope.styleObject = "fadeClass";
 	  }
 	   else {
 	   	$scope.styleObject = " ";
@@ -73,7 +74,7 @@ app.controller("GardenViewCtrl", function($scope, $routeParams, $window, $locati
 
     }
     // boom, return the Array after iteration's complete
-    console.log("filteredarray", items);
+    // console.log("filteredarray", items);
      // return filtered;
   };
 
@@ -81,9 +82,10 @@ app.controller("GardenViewCtrl", function($scope, $routeParams, $window, $locati
 
 	
 	PlantStorage.getUserPlantList(user).then(function(userPlantList){
-		console.log("userPlantList", userPlantList);
+		// console.log("userPlantList", userPlantList);
 
 		filterfunction(userPlantList);
+		// console.log("filterFunction", userPlantList);
 		$scope.userPlants = userPlantList;
 	
 	});
@@ -113,7 +115,9 @@ app.controller("GardenViewCtrl", function($scope, $routeParams, $window, $locati
 	$scope.killTheWabbit = function(plantId){
 		// console.log("kill the wabbit", plantId);
 		PlantStorage.deleteUserPlant(plantId).then(function(comeback){
-			$window.location.href = "#!/plantStuff/gardenView/gardenId";
+			// $window.location.href = "#!/plantStuff/gardenView";
+			// $scope.apply();
+			$route.reload();
 		});
 	};
 	$scope.goBackToTheYard = function(){

@@ -1,0 +1,71 @@
+<!-- <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea" ng-model="newPlant.plantName"></textarea>
+          <label for="textarea1">What are you planting?</label>
+        </div>
+      </div>
+    </form>
+  </div> -->
+
+  <h3>Change the Water Settings on your {{currentPlant.plantName}}</h3>
+
+<ul><li>
+
+      <input type="checkbox" class="filled-in" id="hwater" checked="checked" ng-model="waterObject.highWater" />
+      <label for="hwater">Lots of Water</label>
+    
+    </li>
+      
+    <li>
+   
+      <input type="checkbox" class="filled-in" id="water" checked="checked" ng-model="waterObject.normalWater" />
+      <label for="water">Normal water</label>
+      </li>
+   
+    <li>
+    
+
+      <input type="checkbox" class="filled-in" id="nowater" checked="checked" ng-model="waterObject.drought"/>
+      <label for="nowater">Very little Water</label>
+   
+    </li>
+
+  <!-- user designates the plant as edible -->
+
+<!-- user submits plant information to factory, creates an object with the correct garden id  -->
+<h3>How often would you like to water your plant?</h3>
+<ul>
+  <li>
+    <p>
+      <input type="checkbox" id="every3" ng-model="intervalOb.intervalOb3" />
+      <label for="every3">Every 3 days</label>
+    </p>
+  </li>
+  <li>
+    <p>
+      <input type="checkbox" id="everyHF" ng-model="intervalOb.intervalObHF" />
+      <label for="everyHF">Every .5 days</label>
+    </p>
+  </li>
+  <li>
+    <p>
+       <input type="checkbox" id="every5" ng-model="intervalOb.intervalOb5" />
+        <label for="every5">Every 5 days</label>
+    </p>
+  </li>
+    <li>
+      <p>
+      <input type="checkbox" id="every7" ng-model="intervalOb.intervalOb7" />
+      <label for="every7">Every 7 days</label>
+    </p>
+  </li>
+</ul>
+          
+
+          <!-- user submits new plant to firebase factory -->
+
+ <a class="waves-effect waves-light btn" ng-click="updateThisPlant()"><i class="material-icons left">cloud</i>Update my settings</a>
+ <a class="waves-effect waves-light btn" ng-click="goBack()"><i class="material-icons left">cloud</i>Just kidding I want to go back</a>
+
