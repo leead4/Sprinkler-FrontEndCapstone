@@ -1,5 +1,6 @@
  <!--this is our user's newgardenform, they create a gardenobject and send it up to firebase  -->
-<h4>What's going on in your Garden?</h4>
+<div class="row"></div>
+<h4 class="center-align">What's going on in your Garden?</h4>
 
 
  <div class="row">
@@ -25,42 +26,34 @@
     </form>
   </div> -->
   
-<p class="flow-text"> How much Sun does your Garden Get? </p>
-<ul><li>
 
+<p class="flow-text center-align"> How much Sun does your Garden Get? </p>
+
+  <div class="row">
+
+  <div class="col s4">
       <input type="checkbox" class="filled-in" id="full-sun" checked="checked" ng-model="newGardenObject.sunValue" />
       <label for="full-sun">Full-Sun</label>
-    
-    </li>
-      
-    <li>
+    </div>
+    <div class="col s4">
    
       <input type="checkbox" class="filled-in" id="partsun" checked="checked" ng-model="newGardenObject.partShadeValue" />
       <label for="partsun">Part-Shade</label>
-   
-    </li>
+   </div>
     
-    <li>
     
-
+   <div class="col s4"> 
       <input type="checkbox" class="filled-in" id="fullshade" checked="checked" ng-model="newGardenObject.fullShadeValue"/>
       <label for="fullshade">Full-Shade</label>
-   
-    </li>
-     
-    </ul>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <ul>
-  <li>
-    <a class="waves-effect waves-light btn" ng-click="goBacktoYardview()"><i class="material-icons left">cloud</i>Back to Yardview</a>
-  </li>
-  <li>
-  <a class="waves-effect waves-light btn" ng-click="addYourGarden()"><i class="material-icons left">cloud</i>Plant your Garden</a>
-</li>
-</ul>
+   </div>
+ </div>  
+  
+  
+  <div class="row">
+  <div class="col s6">
+    <a class="waves-effect waves-light btn" ng-click="goBacktoYardview()"><i class="material-icons left">replay</i>Back to Yardview</a>
+    </div>
+  <div class="col s6">
+  <a class="waves-effect waves-light btn" ng-click="addYourGarden()"><i class="material-icons left">add</i>Plant your Garden</a>
+</div>
+</div>

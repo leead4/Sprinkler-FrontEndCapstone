@@ -1,32 +1,72 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5em;
+  background-color: #FDFFF9;
+  color: #22333B; }
 
-
-
-/*font-family: 'Berkshire Swash', cursive;
-/*font-family: 'Amatic SC', cursive;*/
-
-
-
-
-
-body{
-	color: lightgrey;
-	font-family: 'Amatic SC', cursive;
-	font-weight: bold;
-
-}
-
-a {
-	font-family: 'Berkshire Swash', cursive;
-	text-transform: lowercase;
-}
-
-ul li {
-	float: left;
-
-}
+header {
+  background: url("../images/SprinklerLogo.png");
+  background-size: cover;
+  background-color: #FDFFF9;
+  image-repeat: no-repeat; }
 
 .fadeClass {
-	opacity: .3;
-	color: black;
-}
+  opacity: .5; }
 
+main {
+  flex: 1 0 auto; }
+
+.brand-logo {
+  font-family: 'Pacifico', cursive; }
+
+.nav-wrapper, .fixed {
+  margin-bottom: 30px;
+  color: #A7BED3;
+  height: 200px; }
+
+.nav-wrapper a {
+  color: #22333B; }
+
+.a:hover {
+  background-color: #A7BED3; }
+
+.card {
+  background-color: #22333B; }
+
+.card-content {
+  color: #A7BED3; }
+
+.input-field, .validate {
+  color: #BEDFD7; }
+
+ul li {
+  float: left;
+  text-align: center; }
+
+.btn {
+  text-transform: lowercase;
+  background-color: #BEDFD7; }
+
+.btn:hover {
+  background-color: #22333B;
+  color: #BEDFD7; }
+
+.affix {
+  top: 0;
+  width: 100%; }
+
+.footer {
+  background-image: url("../images/sprinklerFooter.png");
+  background-size: cover; }
+
+.resizeIt {
+  width: 30%;
+  height: 30%; }
+
+plantCard {
+  width: 70%; }
+
+/*# sourceMappingURL=css.css.map */
