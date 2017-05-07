@@ -1,9 +1,9 @@
 <!-- user is creating a new plantobject and sends it up to firebase, the time each plant was created is added to the object and allows the user to keep track of when they last watered their plant -->
-
+<div class="row"></div>
  <div class="row">
     <form class="col s12">
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s12 center-align">
           <textarea id="textarea1" class="materialize-textarea" ng-model="newPlant.plantName"></textarea>
           <label for="textarea1">What are you planting?</label>
         </div>
@@ -11,64 +11,64 @@
     </form>
   </div>
 
-<ul><li>
+<div class="row">
+<h3 class="center-align">How much are you watering?</h3>
+
+<div class="col s4">
 
       <input type="checkbox" class="filled-in" id="hwater" checked="checked" ng-model="waterObject.highWater" />
       <label for="hwater">Lots of Water</label>
+    </div>
     
-    </li>
-      <!-- <p>{{newGardenObject.sunValue}}</p> -->
-    <li>
-   
+   <div class="col s4"> 
       <input type="checkbox" class="filled-in" id="water" checked="checked" ng-model="waterObject.normalWater" />
       <label for="water">Normal water</label>
-      </li>
-   
-    <li>
-    
+      </div>
+      
+      <div class="col s4">
 
       <input type="checkbox" class="filled-in" id="nowater" checked="checked" ng-model="waterObject.drought"/>
       <label for="nowater">Very little Water</label>
-   
-    </li>
+   </div>
+    
 
-  <!-- user designates the plant as edible -->
-<p>
-      <input type="checkbox" id="test5" />
-      <label for="test5">Edible</label>
-    </p>
+ 
 
 <!-- user submits plant information to factory, creates an object with the correct garden id  -->
+</div>
 
-<ul>
-  <li>
-    <p>
+<div class="row center-align">
+<h3>How often are you watering?</h3>
+</div>
+<div class="row">
+<div class="col s3">
+
       <input type="checkbox" id="every3" ng-model="intervalOb.intervalOb3" />
       <label for="every3">Every 3 days</label>
-    </p>
-  </li>
-  <li>
-    <p>
+      </div>
+   
+    <div class="col s3">
       <input type="checkbox" id="everyHF" ng-model="intervalOb.intervalObHF" />
       <label for="everyHF">Every .5 days</label>
-    </p>
-  </li>
-  <li>
-    <p>
+      </div>
+    <div class="col s3">
        <input type="checkbox" id="every5" ng-model="intervalOb.intervalOb5" />
         <label for="every5">Every 5 days</label>
-    </p>
-  </li>
-    <li>
-      <p>
+        </div>
+   <div class="col s3">
       <input type="checkbox" id="every7" ng-model="intervalOb.intervalOb7" />
       <label for="every7">Every 7 days</label>
-    </p>
-  </li>
-</ul>
+    
+</div>
+</div>
           
 
           <!-- user submits new plant to firebase factory -->
-
- <a class="waves-effect waves-light btn" ng-click="addYourPlant({gardenId})"><i class="material-icons left">cloud</i>Plant it!</a>
-
+<div class="row">
+<div class="col s6">
+ <a class="waves-effect waves-light btn" ng-click="addYourPlant({gardenId})"><i class="material-icons left">add</i>Plant it!</a>
+ </div>
+ <div class="col s6">
+ <a class="waves-effect waves-light btn" ng-href="#!/plantStuff/gardenView"><i class="material-icons left">replay</i>Go Back!</a>
+ </div>
+ </div>

@@ -1,8 +1,8 @@
 <!-- this is where the user sees all of their gardens this is the first view of the page and user will navigate to a selected garden page in the gardenView partial-->
-
-<nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo center">Rainwater calculator</a>
+<div class="row"></div>
+<nav class="z-depth-0 pants">
+    <div class="nav-wrapper z-depth-0">
+     
       <ul>
       <!-- this anchor tag allows our user to add a plant to this garden and takes them to the plantBuilder partial, a user can't add a plant unless they are in a garden, a plant can't exist without a garden-->
         <li><a ng-href="#!/plantStuff/gardenBuilder">add a Garden</a></li>
@@ -12,15 +12,14 @@
     </div>
   </nav>
 <div class="row">
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1" ng-repeat="garden in userGardens">
+        <div class="col s12 m6" ng-repeat="garden in userGardens">
+          <div class="card blue-grey darken-1 center-align">
             <div class="card-content white-text">
               <span class="card-title">{{garden.gardenName}}</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p><img src="/images/plantimage.png"></p>
             </div>
             <div class="card-action">
-              <a ng-click="setThisGarden(garden)">Checkout Your garden</a>
+              <a class="btn btn-flat" ng-click="setThisGarden(garden)">Checkout Your garden</a>
               
             </div>
           </div>

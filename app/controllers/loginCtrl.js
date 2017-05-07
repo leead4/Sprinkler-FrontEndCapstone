@@ -49,6 +49,9 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location, Pla
 			if (gardensObject.length === 0){
  				 // console.log("THERE IS NOTHING IN YOUR LIFE");
  				$scope.isLoggedIn = true;
+ 				WeatherStorage.getWeather().then(function(weatherInfo){
+ 					PlantGetter.setCurrentForecast(weatherInfo);
+ 				});
  				$window.location.href = "#!/plantStuff/gardenBuilder";
  			}else {
  				$scope.gardenExists = true;
@@ -56,8 +59,8 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location, Pla
  				WeatherStorage.getWeather().then(function(weatherInfo){
  					PlantGetter.setCurrentForecast(weatherInfo);
  				});
- 				// console.log("YOU DID HAVE SOMETHING IN YOUR LIFE");
- 				// console.log("gardensObject", gardensObject);
+ 				console.log("YOU DID HAVE SOMETHING IN YOUR LIFE");
+ 				console.log("gardensObject", gardensObject);
 
  				$window.location.href = "#!/yardView";
 			}

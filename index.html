@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CapstoneGardenCalculator</title>
+	<title>sprinkler</title>
   <link rel="stylesheet" type="text/css" href="lib/node_modules/materialize-css/dist/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Berkshire+Swash" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Pacifico" rel="stylesheet">
+	
   <link rel="stylesheet" type="text/css" href="styles/css.css">
 </head>
 <body ng-app="GardenCalc">
-
-<nav>
-    <div class="nav-wrapper card-panel teal lighten-2 " ng-controller="NavCtrl">
-    <a href="#!" class="brand-logo center">Plant Calculator</a>
+<header>
+<nav class="z-depth-0">
+ 
+    <div class="nav-wrapper fixed z-depth-0" ng-controller="NavCtrl"> 
+    <a href="#!" class="brand-logo center">
+    <!-- <img src="images/SprinklerLogo.png"> -->
+    Sprinkler</a>
     <ul class="left">
       <li ng-show="!isLoggedIn"><a href="#!/login">Login</a></li>
       <li ng-show="isLoggedIn"><a href="#!/logout">Logout</a></li>
@@ -20,9 +23,21 @@
     </ul>
     </div>
 </nav>
-
+</header>
+<main>
 <div class="container" ng-view></div>
-
+</main>
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <!-- <img src="images/sprinklerFooter.png"> -->
+              </div>
+              
+            </div>
+          </div>
+         
+        </footer>
 <!-- jquery -->
 <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
 <!-- materialize -->

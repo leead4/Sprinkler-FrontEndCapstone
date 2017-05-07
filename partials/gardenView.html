@@ -1,8 +1,8 @@
 <!-- user navigates here from yardview, user can see their gardenName and the names of the plants in their garden, they can also select their plants to go to a plant view in the plantview partial  -->
-
-<nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo center">Rainwater calculator</a>
+<div class="row"></div>
+<nav class="z-depth-0">
+    <div class="nav-wrapper z-depth-0">
+     
       <ul>
       <!-- this anchor tag allows our user to add a plant to this garden and takes them to the plantBuilder partial, a user can't add a plant unless they are in a garden, a plant can't exist without a garden-->
         <li><a ng-href="#!/plantStuff/plantBuilder/{currentGarden.gardenId}">add a plant to {{currentGarden.gardenName}}</a></li>
@@ -18,24 +18,24 @@
 <div class="row">
         <div class="col s12 m6" ng-repeat="plant in userPlants | filter: {gardenId: filterGarden}">
         <div class="{{plant.styleObject}}">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
+          <div class="card blue-grey darken-1 center-align">
+            <div class="card-content">
               <span class="card-title">{{plant.plantName}}</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <p>
+                <img src="/images/plantimage.png">
+              </p>
             </div>
-            <div class="card-action">
-            <div>
-            <div class="col">
-
-    
+            
 
 
   
           <!-- the plant view button takes the user to the plantview partial and the killtheWabbit function is our delete button, removing the plant from the garden and reloading the page -->
               
-              <a ng-click="setThisPlant(plant)">Checkout your plant</a>
-              <a ng-click="killTheWabbit(plant.id)">Kill your plant!</a>
+              <a class="btn" ng-click="setThisPlant(plant)">Checkout your plant</a>
+              <a class="btn btn-flat" ng-click="killTheWabbit(plant.id)">Kill your plant!</a>
+               <div class="card-action">
+            <div>
+            <div class="col">
             </div>
           </div>
         </div>
