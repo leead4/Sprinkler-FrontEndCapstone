@@ -8,7 +8,6 @@ app.factory("PlantStorage", (FBCreds, $window, $q, $http, AuthFactory) =>{
         return $q((resolve, reject) => {
 	        $http.get(`${FBCreds.databaseURL}/plantItems.json?orderBy="uid"&equalTo="${user}"`)
 	        .then((plantObject) => {
-		     // console.log("plantObject", plantObject.data);
 		     let plantCollection = plantObject.data;
 		     Object.keys(plantCollection).forEach((key)=>{
 			    plantCollection[key].id = key;
@@ -28,15 +27,11 @@ app.factory("PlantStorage", (FBCreds, $window, $q, $http, AuthFactory) =>{
 	   return $q((resolve, reject) => {
 	       $http.get(`${FBCreds.databaseURL}/gardens.json?orderBy="uid"&equalTo="${user}"`)
 		   .then((gardenObject) =>{
-             // console.log("THIS IS WHAT YOU WANT", Object.keys(gardenObject.data));
-            // console.log("gardenObject", gardenObject.data);
 	        let gardenCollection = gardenObject.data;
             Object.keys(gardenCollection).forEach((key) =>{
                 gardenCollection[key].id = key;
                 gardens.push(gardenCollection[key]);
-                // console.log("gardens-right before your resolve", gardens);
             });
-             // console.log("gardens--this is your firefactory return", gardens);
                 resolve(gardens);
             })
            .catch((error) =>{
@@ -49,7 +44,6 @@ app.factory("PlantStorage", (FBCreds, $window, $q, $http, AuthFactory) =>{
 
  
     let postNewPlant = (newPlant) => {
-        // console.log(newPlant);
 	    return $q((resolve, reject) => {
 		    $http.post(`${FBCreds.databaseURL}/plantItems.json`, 
 			JSON.stringify(newPlant))
@@ -63,7 +57,6 @@ app.factory("PlantStorage", (FBCreds, $window, $q, $http, AuthFactory) =>{
     };
 
     let updatePlant = (plantId, updatedPlant) => {
-        // console.log("updated plant", updatedPlant);
         return $q((resolve, reject) => {
             $http.patch(`${FBCreds.databaseURL}/plantItems/${plantId}.json`,
                 JSON.stringify(updatedPlant))

@@ -1,22 +1,15 @@
 "use strict";
-//this allows the user to add plants to an exisiting 
-//garden
 
 app.controller("NewPlantCtrl", function($scope, $window, AuthFactory, PlantStorage, PlantGetter, $routeParams){
-//run when use clicks on submit button
 let intialG = () => {
- 		$scope.currentGarden = PlantGetter.getCurrentGarden();
- 		console.log("this is the garden", $scope.currentGarden);
- 		
+ 		$scope.currentGarden = PlantGetter.getCurrentGarden(); 		
  	};
 
  	intialG();
     
 	let user = AuthFactory.getUser();
 
-	 let gardenId = $scope.currentGarden.id;
-	console.log("gardenId", gardenId);
-	
+	 let gardenId = $scope.currentGarden.id;	
 
    $scope.waterObject = {};
    	$scope.waterObject.highWater = '';
@@ -40,16 +33,13 @@ let intialG = () => {
 		uid: user,
 		gardenId: gardenId
 	};
-// grab the time our plantobject was created
+	
 	let getDate = ()=> {
 		
 		var userTime = new Date();
 		let miliDate = userTime.getTime();
 		let cleanedDate = ((((miliDate / 1000 ) / 60) / 60) / 24);
 		let wholeDate = cleanedDate.toFixed(0);
-		// userTime.year = userTime.getYear();
-		// userTime.month = userTime.getMonth();
-		// userTime.day = userTime.getDate();
 		$scope.newPlant.waterTimeline = wholeDate;
 
 	};
@@ -88,12 +78,7 @@ let intialG = () => {
 		getDate();
 		$scope.setWaterType();
 		$scope.setWaterInterval();
-		console.log("you're about to add a plant!", $scope.newPlant);
-		
-		
-
 		PlantStorage.postNewPlant($scope.newPlant).then(function(comeback){
-			// console.log("you added a plant");
 			$window.location.href = "#!/plantStuff/gardenView";
 		});
 	};

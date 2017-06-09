@@ -3,15 +3,11 @@
 var app = angular.module('GardenCalc', ['ngRoute']);
 
 let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
-  // console.log("running isAuth");
     AuthFactory.isAuthenticated()
     .then ( (userExists) => {
-    console.log("userExists", userExists);
         if (userExists){
-      console.log("Authenticated, go ahead.");
             resolve();
         }else {
-      console.log("Authentication rejected, go away.");
             reject();
         }
     });
@@ -20,7 +16,6 @@ let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
 
 
 app.filter("stalePlant", function($scope){
-  
     return function(userPlants){
 
     $scope.objectStyle = {};
@@ -31,27 +26,10 @@ app.filter("stalePlant", function($scope){
       };
       console.log("userPlantsin Filter", userPlants);
     });
-    // var userTime = new Date();
-    // let miliDate = userTime.getTime();
-    // let cleanedDate = ((((miliDate / 1000 ) / 60) / 60) / 24);
-    // let wholeDate = cleanedDate.toFixed(0);
-    
-    // angular.forEach(userPlants, function(plant){
-    //   let dirtyPlant = plant.waterTimeLine;
-    //   let cleanPlant = parseInt(cleanPlant);
-    //   let dateDiff = wholeDate - cleanPlant;
-      
-    //   if (dateDiff < plant.waterInterval){
-    //     $scope.objectStyle = {
-    //       "opacity": ".5",
-    //       "background-color": "orange"
-    //     };
-        
-    //   }
-     
-    // });
+   
 return userPlants;
 };
+
 });
 
 app.config(function($routeProvider){
@@ -103,9 +81,6 @@ app.config(function($routeProvider){
       controller: "UpdatePlantCtrl",
       resolve: {isAuth}
     });
-     // otherwise('/');
-
-
 	
 });
 

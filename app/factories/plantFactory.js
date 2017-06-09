@@ -23,8 +23,6 @@ app.factory("PlantGetter", function(){
 
 	let setCurrentPlant = (something) =>{
 		currentPlant = something;
-
-
 	};
 
 	let getCurrentGarden = ()=> {
