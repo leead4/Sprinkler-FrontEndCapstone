@@ -1,4 +1,3 @@
-// making api calls to weather underground app
 "use strict";
 
 app.factory("WeatherStorage", function(FBCreds, $window, $q, $http, AuthFactory){

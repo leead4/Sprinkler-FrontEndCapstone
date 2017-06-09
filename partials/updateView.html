@@ -1,69 +1,52 @@
-<!-- <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea" ng-model="newPlant.plantName"></textarea>
-          <label for="textarea1">What are you planting?</label>
-        </div>
-      </div>
-    </form>
-  </div> -->
 <div class="row"></div>
 <div class="row">
-<h3 class="center-align">Change the Water Settings on your {{currentPlant.plantName}}</h3>
-<div class="col s4">
-  
+    <h3 class="center-align">Change the Water Settings on your {{currentPlant.plantName}}</h3>
+    <div class="col s4">
 
-
-      <input type="checkbox" class="filled-in" id="hwater" checked="checked" ng-model="waterObject.highWater" />
-      <label for="hwater">Lots of Water</label>
+        <input type="checkbox" class="filled-in" id="hwater" checked="checked" ng-model="waterObject.highWater" />
+        <label for="hwater">Lots of Water</label>
     </div>
-    
-   <div class="col s4">
-      <input type="checkbox" class="filled-in" id="water" checked="checked" ng-model="waterObject.normalWater" />
-      <label for="water">Normal water</label>
-      </div>
-      
-      <div class="col s4">
 
-      <input type="checkbox" class="filled-in" id="nowater" checked="checked" ng-model="waterObject.drought"/>
-      <label for="nowater">Very little Water</label>
-      </div>
-   
-    
-  <!-- user designates the plant as edible -->
+    <div class="col s4">
+        <input type="checkbox" class="filled-in" id="water" checked="checked" ng-model="waterObject.normalWater" />
+        <label for="water">Normal water</label>
+    </div>
+
+    <div class="col s4">
+
+        <input type="checkbox" class="filled-in" id="nowater" checked="checked" ng-model="waterObject.drought" />
+        <label for="nowater">Very little Water</label>
+    </div>
+
+
 </div>
 <h3 class="center-align">How often would you like to water your plant?</h3>
 <div class="row">
 
-<!-- user submits plant information to factory, creates an object with the correct garden id  -->
 
-<div class="col 3">
-      <input type="checkbox" id="every3" ng-model="intervalOb.intervalOb3" />
-      <label for="every3">Every 3 days</label>
-      </div>
     <div class="col 3">
-      <input type="checkbox" id="everyHF" ng-model="intervalOb.intervalObHF" />
-      <label for="everyHF">Every .5 days</label>
-      </div>
+        <input type="checkbox" id="every3" ng-model="intervalOb.intervalOb3" />
+        <label for="every3">Every 3 days</label>
+    </div>
     <div class="col 3">
-       <input type="checkbox" id="every5" ng-model="intervalOb.intervalOb5" />
+        <input type="checkbox" id="everyHF" ng-model="intervalOb.intervalObHF" />
+        <label for="everyHF">Every .5 days</label>
+    </div>
+    <div class="col 3">
+        <input type="checkbox" id="every5" ng-model="intervalOb.intervalOb5" />
         <label for="every5">Every 5 days</label>
     </div>
     <div class="col 3">
-      <input type="checkbox" id="every7" ng-model="intervalOb.intervalOb7" />
-      <label for="every7">Every 7 days</label>
-      </div>
-    
-          
+        <input type="checkbox" id="every7" ng-model="intervalOb.intervalOb7" />
+        <label for="every7">Every 7 days</label>
+    </div>
 </div>
 
-          <!-- user submits new plant to firebase factory -->
 <div class="row">
-<div class="col s6">
- <a class="waves-effect waves-light btn" ng-click="updateThisPlant()"><i class="material-icons left">add</i>add my changes</a>
- </div>
- <div class="col s6">
- <a class="waves-effect waves-light btn" ng-click="goBack()"><i class="material-icons left">replay</i>Just kidding I want to go back</a>
-</div>
+    <div class="col s6">
+        <a class="waves-effect waves-light btn" ng-click="updateThisPlant()"><i class="material-icons left">add</i>add my changes</a>
+    </div>
+    <div class="col s6">
+        <a class="waves-effect waves-light btn" ng-click="goBack()"><i class="material-icons left">replay</i>Just kidding I want to go back</a>
+    </div>
 </div>

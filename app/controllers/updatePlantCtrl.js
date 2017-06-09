@@ -3,10 +3,8 @@
 app.controller("UpdatePlantCtrl", function(PlantGetter, $scope, $window, AuthFactory, PlantStorage){
 	$scope.currentPlant = {};
 
-
  	let intial = () => {
  		$scope.currentPlant = PlantGetter.getCurrentPlant();
- 		console.log("this is the plant", $scope.currentPlant);
  	};
 
  	intial();
@@ -75,19 +73,23 @@ app.controller("UpdatePlantCtrl", function(PlantGetter, $scope, $window, AuthFac
 
 	};
 
+		
 		$scope.updateThisPlant = ()=>{
+
+  		
+    	
+ 			
+
 		$scope.setWaterType();
 		$scope.setWaterInterval();
-		console.log("you're about to add a plant!", $scope.updatedPlant);
-		
-		
-		 console.log("$scope.updatedPlant", $scope.updatedPlant);
-
 		PlantStorage.updatePlant($scope.updatedPlant.id, $scope.updatedPlant)
 		.then(function(stuff){
 			$window.location.href = "#!/plantStuff/gardenView";
 		 });
 	};
+
+
+
 
 	$scope.goBack = () => {
 		$window.location.href = "#!/plantStuff/gardenView";
