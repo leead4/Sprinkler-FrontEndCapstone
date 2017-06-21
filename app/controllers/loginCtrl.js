@@ -1,10 +1,13 @@
 "use strict";
 
-app.controller("UserCtrl", function($scope, $window, AuthFactory, $location, PlantStorage, PlantGetter, WeatherStorage){
+app.controller("UserCtrl", function($scope, $document, $window, AuthFactory, $location, PlantStorage, PlantGetter, WeatherStorage){
+	
+
 	$scope.account = {
 		email: "",
 		password: ""
 	};
+
 
 	let logout = () => {
 		console.log("logout clicked");
@@ -57,4 +60,5 @@ app.controller("UserCtrl", function($scope, $window, AuthFactory, $location, Pla
 		
 		});
 	};
+
 });

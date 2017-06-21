@@ -1,52 +1,99 @@
 <div class="row"></div>
-<div class="row">
-    <h3 class="center-align">Change the Water Settings on your {{currentPlant.plantName}}</h3>
-    <div class="col s4">
+<div class= "container form_class">
+<br>
+<br>
 
+
+    <h4 class="center-align">change your water settings
+     </h4>
+<!--     <h6 class="center-align">select your water options</h6>
+ -->    <p class="center-align handwriting"><i class="material-icons push-right">mode_edit</i>
+ my {{currentPlant.plantName}} needs....</p>
+<br>
+<br>
+<!-- <i class="material-icons push-right">mode_edit</i> -->
+<div class="row">
+<div class="col s2"></div>
+    <div class="col s3">
+    <div class="center-align">
         <input type="checkbox" class="filled-in" id="hwater" checked="checked" ng-model="waterObject.highWater" />
         <label for="hwater">Lots of Water</label>
     </div>
-
-    <div class="col s4">
+    </div>
+    <div class="col s3">
+    <div class="center-align">
         <input type="checkbox" class="filled-in" id="water" checked="checked" ng-model="waterObject.normalWater" />
         <label for="water">Normal water</label>
     </div>
+    </div>
 
-    <div class="col s4">
+    <div class="col s3">
+    <div class="center-align">
 
         <input type="checkbox" class="filled-in" id="nowater" checked="checked" ng-model="waterObject.drought" />
         <label for="nowater">Very little Water</label>
     </div>
+    </div>
+    <div class="col s2"></div>
 
 
 </div>
-<h3 class="center-align">How often would you like to water your plant?</h3>
+<br>
+<!-- <h6 class="center-align">adjust your schedule</h6> -->
+    <p class="center-align handwriting"><i class="material-icons push-right">mode_edit</i>
+I want to water my plant every......</p>
+
+<br>
+<!-- <i class="material-icons push-right">mode_edit</i> -->
+<!-- <h3 class="center-align">How often would you like to water your plant?</h3> -->
 <div class="row">
+ <div class="col s2"></div>
 
-
-    <div class="col 3">
+    <div class="col s2">
+<div class="center-align">
         <input type="checkbox" id="every3" ng-model="intervalOb.intervalOb3" />
-        <label for="every3">Every 3 days</label>
+        <label for="every3">3 days</label>
     </div>
-    <div class="col 3">
-        <input type="checkbox" id="everyHF" ng-model="intervalOb.intervalObHF" />
-        <label for="everyHF">Every .5 days</label>
     </div>
-    <div class="col 3">
-        <input type="checkbox" id="every5" ng-model="intervalOb.intervalOb5" />
-        <label for="every5">Every 5 days</label>
-    </div>
-    <div class="col 3">
-        <input type="checkbox" id="every7" ng-model="intervalOb.intervalOb7" />
-        <label for="every7">Every 7 days</label>
-    </div>
-</div>
 
+    <div class="col s2">
+    <div class="center-align">
+        <input type="checkbox" id="everyHF" ng-model="intervalOb.intervalObHF" />
+        <label for="everyHF">.5 days</label>
+    </div>
+    </div>
+    <div class="col s2">
+    <div class="center-align">
+        <input type="checkbox" id="every5" ng-model="intervalOb.intervalOb5" />
+        <label for="every5">5 days</label>
+    </div>
+    </div>
+    <div class="col s2">
+    <div class="center-align">
+        <input type="checkbox" id="every7" ng-model="intervalOb.intervalOb7" />
+        <label for="every7">7 days</label>
+    </div>
+    </div>
+     <div class="col s2"></div>
+
+</div>
+<br>
+
+
+<p class="center-align handwriting">submit your changes</p>
 <div class="row">
-    <div class="col s6">
-        <a class="waves-effect waves-light btn" ng-click="updateThisPlant()"><i class="material-icons left">add</i>add my changes</a>
+<div class="col s2"></div>
+    <div class="col s4">
+        <a class="waves-effect waves-light btn center-align" ng-click="updateThisPlant()"><i class="material-icons left">add</i>update</a>
     </div>
-    <div class="col s6">
-        <a class="waves-effect waves-light btn" ng-click="goBack()"><i class="material-icons left">replay</i>Just kidding I want to go back</a>
+    <div class="col s4">
+        <a class="waves-effect waves-light btn center-align" ng-click="goBack()"><i class="material-icons left">replay</i>cancel</a>
     </div>
+    <div class="col s2"></div>
+</div>
+<br>
+<br>
+
+
+
 </div>

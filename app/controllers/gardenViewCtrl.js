@@ -1,6 +1,8 @@
 "use strict";
 
-app.controller("GardenViewCtrl", function($scope, $route, $routeParams, $window, $location, PlantGetter, PlantStorage, AuthFactory){
+app.controller("GardenViewCtrl", function($scope, $route, $document, $routeParams, $window, $location, PlantGetter, PlantStorage, AuthFactory){
+
+
 	let user = AuthFactory.getUser();
 	$scope.styleObject = {};
 	$scope.currentGarden = {};
@@ -27,7 +29,7 @@ app.controller("GardenViewCtrl", function($scope, $route, $routeParams, $window,
       let dateDiff = wholeDate - cleanPlant;
       let interval = items[i].waterInterval;
       if (dateDiff > interval) {
-         $scope.styleObject = "fadeClass";
+         $scope.styleObject = "wobble-hor-bottom";
         items[i].styleObject = $scope.styleObject;
 	  }
 	   else {
@@ -36,6 +38,7 @@ app.controller("GardenViewCtrl", function($scope, $route, $routeParams, $window,
 
     }
   };
+
 	PlantStorage.getUserPlantList(user).then(function(userPlantList){
 		filterfunction(userPlantList);
 		$scope.userPlants = userPlantList;
@@ -55,4 +58,5 @@ app.controller("GardenViewCtrl", function($scope, $route, $routeParams, $window,
 	$scope.goBackToTheYard = function(){
 		$window.location.href = "#!/yardView";
 	};
+
 });

@@ -71,11 +71,11 @@ app.config(function($routeProvider){
       controller: "PlantViewCtrl",
       resolve: {isAuth}
     }).
-    when('/plantStuff/gardenhose', {
-      templateUrl: 'partials/gardenHoseView.html',
-      controller: "WaterCtrl",
-      resolve: {isAuth}
-    }).
+    // when('/plantStuff/gardenhose', {
+    //   templateUrl: 'partials/gardenHoseView.html',
+    //   controller: "WaterCtrl",
+    //   resolve: {isAuth}
+    // }).
     when('/plantStuff/updatePlant', {
       templateUrl: 'partials/updateView.html',
       controller: "UpdatePlantCtrl",

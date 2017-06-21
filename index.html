@@ -5,7 +5,10 @@
   <link rel="stylesheet" type="text/css" href="lib/node_modules/materialize-css/dist/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Pacifico" rel="stylesheet">
-	
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:800" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles/css.css">
 </head>
 <body ng-app="GardenCalc">
@@ -19,6 +22,8 @@
       <li ng-show="!isLoggedIn"><a href="#!/login">Login</a></li>
       <li ng-show="isLoggedIn"><a href="#!/logout">Logout</a></li>
       <li ng-show="isActive('/yardView')" class="active"><a ng-href="gardenView">GardenView</a></li>
+      
+      <!-- <li ng-show="isActive('/gardenView')" class="active"><a ng-href="yardView">YardView</a></li> -->
     </ul>
     </div>
 </nav>
@@ -34,6 +39,8 @@
             </div>
           </div>
         </footer>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
 <!-- jquery -->
 <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
 <!-- materialize -->
@@ -64,7 +71,6 @@
 <script type="text/javascript" src="app/controllers/newGardenCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/gardenViewCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/NewPlantCtrl.js"></script>
-<script type="text/javascript" src="app/controllers/GardenHoseCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/navCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/yardViewCtrl.js"></script>
 <script type="text/javascript" src="app/controllers/plantViewCtrl.js"></script>
