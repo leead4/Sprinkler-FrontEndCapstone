@@ -3,11 +3,11 @@
 app.controller("PlantViewCtrl", function($scope, $routeParams, $document, RainStorage, PlantStorage, $window, WeatherStorage, PlantGetter){
     $document.ready(function(){
     	$('#waterCheck').modal();
+    	$('.tooltipped').tooltip({delay: 50});
     });
 
-    $scope.clickIt = ()=>{
-		$('#modal1').modal('close');
-    };
+        
+  
 
  	$scope.currentPlant = {};
 

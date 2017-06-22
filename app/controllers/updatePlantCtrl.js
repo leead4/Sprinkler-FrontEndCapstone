@@ -76,10 +76,6 @@ app.controller("UpdatePlantCtrl", function(PlantGetter, $scope, $window, AuthFac
 		
 		$scope.updateThisPlant = ()=>{
 
-  		
-    	
- 			
-
 		$scope.setWaterType();
 		$scope.setWaterInterval();
 		PlantStorage.updatePlant($scope.updatedPlant.id, $scope.updatedPlant)

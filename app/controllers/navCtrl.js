@@ -11,4 +11,8 @@ app.controller("NavCtrl", function($scope, $location, $window){
 			$window.location.href= "#!/login";
 		}
 	});
+
+	
+
+
 });
