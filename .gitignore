@@ -1,11 +1,7 @@
 lib/node_modules
 lib/.sass-cache
 dist
-/app/values/keys.js
-app/values/keys.js
-css/main.css
-css/main.css.map
 lib/bower_components
-app/values/fb-creds.js
+
 
 .DS_Store
