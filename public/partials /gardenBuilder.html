@@ -1,0 +1,58 @@
+<div class="row"></div>
+<div class= "container form_class">
+<br>
+<br>
+<h4 class="center-align handwriting">What's going on in your Garden?</h4>
+
+
+<div class="row">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" ng-model="newGardenObject.gardenName"></textarea>
+                <label for="textarea1">Garden Name</label>
+
+            </div>
+        </div>
+    </form>
+</div>
+<p class="center-align handwriting"><i class="material-icons push-right">mode_edit</i>
+ How much Sun does your Garden Get?</p>
+<!-- <p class="flow-text center-align"> How much Sun does your Garden Get? </p> -->
+
+<div class="row">
+<div class="col s2"></div>
+
+
+    <div class="col s3">
+        <input type="checkbox" class="filled-in" id="full-sun" checked="checked" ng-model="newGardenObject.sunValue" />
+        <label for="full-sun">Full-Sun</label>
+    </div>
+    <div class="col s3">
+
+        <input type="checkbox" class="filled-in" id="partsun" checked="checked" ng-model="newGardenObject.partShadeValue" />
+        <label for="partsun">Part-Shade</label>
+    </div>
+
+
+    <div class="col s3">
+        <input type="checkbox" class="filled-in" id="fullshade" checked="checked" ng-model="newGardenObject.fullShadeValue" />
+        <label for="fullshade">Full-Shade</label>
+    </div>
+    <div class="col s2"></div>
+
+</div>
+
+
+<div class="row">
+<div class="col s2"></div>
+    <div class="col s4">
+        <a class="waves-effect waves-light btn" ng-click="goBacktoYardview()"><i class="material-icons left">replay</i>Back to Yardview</a>
+    </div>
+    <div class="col s4">
+        <a class="waves-effect waves-light btn" ng-click="addYourGarden()"><i class="material-icons left">add</i>Plant your Garden</a>
+    </div>
+    <div class="col s2"></div>
+
+</div>
+</div>
