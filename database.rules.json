@@ -1,0 +1,18 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+      "plantItems" : {
+    	".indexOn" : ["uid"]
+      },
+    	"gardens" : {
+    	".indexOn" : ["uid"]
+    	},
+    	"users" : {
+    	".indexOn" : ["uid"]
+    	}
+    
+    
+    
+    }
+}
